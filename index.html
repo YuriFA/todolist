@@ -7,62 +7,55 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-    <div class="content">
-      <div class="list">
-        <div class="list_header">
+    <div class="container">
+      <div class="todo">
+        <div class="todo_controls">
           <label class="custom_checkbox_label">
             <input id="check_all_tasks" type="checkbox" class="custom_checkbox" name="ch_all">
-            <span class="custom_checkbox__bg"></span>
-            <span class="custom_checkbox__check"></span>
           </label>
           <i class="fa fa-trash list_btn" id="delete_list" aria-hidden="true"></i>
           <i class="fa fa-plus list_btn" id="add_task" aria-hidden="true"></i>
         </div>
-        <form>
-          <div class="task_line">
+        <ul class="todo_list">
+          <li class="todo_line">
             <label class="custom_checkbox_label">
               <input type="checkbox" class="custom_checkbox" name="ch_task_1">
-              <span class="custom_checkbox__bg"></span>
               <span class="custom_checkbox__check"></span>
             </label>
             <input class="task" name="task_1" type="text" placeholder="Enter text" value="">
-          </div>
-          <div class="task_line">
+          </li>
+          <li class="todo_line">
             <label class="custom_checkbox_label">
               <input type="checkbox" class="custom_checkbox" name="ch_task_2">
-              <span class="custom_checkbox__bg"></span>
               <span class="custom_checkbox__check"></span>
             </label>
             <input class="task" name="task_2" type="text" placeholder="Enter text" value="">
-          </div>
-          <div class="task_line">
+          </li>
+          <li class="todo_line">
             <label class="custom_checkbox_label">
               <input type="checkbox" class="custom_checkbox" name="ch_task_3">
-              <span class="custom_checkbox__bg"></span>
               <span class="custom_checkbox__check"></span>
             </label>
             <input class="task" name="task_3" type="text" placeholder="Enter text" value="">
-          </div>
-          <div class="task_line">
+          </li>
+          <li class="todo_line">
             <label class="custom_checkbox_label">
               <input type="checkbox" class="custom_checkbox" name="ch_task_4">
-              <span class="custom_checkbox__bg"></span>
               <span class="custom_checkbox__check"></span>
             </label>
             <input class="task" name="task_4" type="text" placeholder="Enter text" value="">
-          </div>
-          <div class="task_line">
+          </li>
+          <li class="todo_line">
             <label class="custom_checkbox_label">
               <input type="checkbox" class="custom_checkbox" name="ch_task_5">
-              <span class="custom_checkbox__bg"></span>
               <span class="custom_checkbox__check"></span>
             </label>
             <input class="task" name="task_5" type="text" placeholder="Enter text" value="">
-          </div>
-        </form>
+          </li>
       </div>
     </div>
 
   <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+  <script src="js/script.js"></script>
 </body>
 </html>
