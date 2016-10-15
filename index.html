@@ -14,45 +14,48 @@
           <input id="check_all_tasks" type="checkbox" class="custom_checkbox" name="ch_all">
           <span class="custom_checkbox__check"></span>
         </label>
-        <i class="fa fa-trash list_btn" id="delete_list" aria-hidden="true"></i>
-        <i class="fa fa-plus list_btn" id="add_task" aria-hidden="true"></i>
+<!--         <i class="fa fa-trash list_btn" id="delete_list" aria-hidden="true"></i> -->
       </div>
       <ul class="todo_list">
         <li class="todo_line">
           <label class="custom_checkbox_label">
-            <input type="checkbox" class="custom_checkbox" name="ch_task_1">
+            <input type="checkbox" class="custom_checkbox" name="ch_task[]">
             <span class="custom_checkbox__check"></span>
           </label>
-          <input class="task" name="task_1" type="text" placeholder="" value="">
+          <input class="task" name="task[]" type="text" placeholder="" value="">
         </li>
         <li class="todo_line">
           <label class="custom_checkbox_label">
-            <input type="checkbox" class="custom_checkbox" name="ch_task_2">
+            <input type="checkbox" class="custom_checkbox" name="ch_task[]">
             <span class="custom_checkbox__check"></span>
           </label>
-          <input class="task" name="task_2" type="text" placeholder="" value="">
+          <input class="task" name="task[]" type="text" placeholder="" value="">
         </li>
         <li class="todo_line">
           <label class="custom_checkbox_label">
-            <input type="checkbox" class="custom_checkbox" name="ch_task_3">
+            <input type="checkbox" class="custom_checkbox" name="ch_task[]">
             <span class="custom_checkbox__check"></span>
           </label>
-          <input class="task" name="task_3" type="text" placeholder="" value="">
+          <input class="task" name="task[]" type="text" placeholder="" value="">
         </li>
         <li class="todo_line">
           <label class="custom_checkbox_label">
-            <input type="checkbox" class="custom_checkbox" name="ch_task_4">
+            <input type="checkbox" class="custom_checkbox" name="ch_task[]">
             <span class="custom_checkbox__check"></span>
           </label>
-          <input class="task" name="task_4" type="text" placeholder="" value="">
+          <input class="task" name="task[]" type="text" placeholder="" value="">
         </li>
         <li class="todo_line">
           <label class="custom_checkbox_label">
-            <input type="checkbox" class="custom_checkbox" name="ch_task_5">
+            <input type="checkbox" class="custom_checkbox" name="ch_task[]">
             <span class="custom_checkbox__check"></span>
           </label>
-          <input class="task" name="task_5" type="text" placeholder="" value="">
+          <input class="task" name="task[]" type="text" placeholder="" value="">
         </li>
+      </ul>
+      <div class="line_control">
+        <i class="fa fa-plus list_btn" id="add_task" aria-hidden="true"></i>
+      </div>
     </div>
   </div>
   <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
