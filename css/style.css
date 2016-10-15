@@ -23,9 +23,12 @@ ul {
 	left: 0;
 	width: 300px;
 	height: 300px;
-	background-color: #f7f3a3;
 	border-radius: 3px;
-	border: 1px solid #ccc;
+}
+.todo {
+	height: 100%;
+	border: 1px solid #ffeb3b;
+	background-color: #ffeb3b;
 	background-image: linear-gradient(to right, transparent 45px, #e90404 45px, #e90404 46px, transparent 46px), linear-gradient(to right, transparent 50px, #e90404 50px, #e90404 51px, transparent 51px);
 }
 .todo:before, .todo:after {
@@ -33,15 +36,15 @@ ul {
     position: absolute;
     z-index: -1;
     height: 4px;
-    background: #f7f3a3;
-    border: 1px solid #ccc;
+    background: #ffeb3b;
+    border: 1px solid #222;
     border-radius: 2px;
 }
 .todo:before {
 	left: 2px;
     right: 2px;
     bottom: -6px;
-    border-color: #c4c4c4;
+    border-color: #222;
     -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
 }
@@ -74,12 +77,13 @@ ul {
     float: right;
     padding-right: 10px;
     width: 80%;
-    background: #f7f3a3;
+    background: transparent;
     border: none;
     font-family: 'Neucha', cursive;
     padding-top: 10px;
     font-size: 20px;
     font-weight: bold;
+    letter-spacing: 1.5px;
 }
 .todo_line {
 	height: 40px;
