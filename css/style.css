@@ -24,12 +24,12 @@ ul {
 	left: 0;
 	width: 350px;
 	min-height: 350px;
-	border-radius: 3px;
 	padding: 50% 0;
 }
 .todo {
 	height: auto;
 	position: relative;
+	border-radius: 3px;
 	border-bottom: 1px solid #371821;
 	background-color: #eccf47;
 	background-image: linear-gradient(to right, transparent 45px, #d41137 45px, #d41137 46px, transparent 46px), linear-gradient(to right, transparent 50px, #d41137 50px, #d41137 51px, transparent 51px);
@@ -156,4 +156,10 @@ input.custom_checkbox {
     font-size: 25px;
     cursor: pointer;
     margin-left: 60px;
+}
+i#delete_todolist {
+    display: inline-block;
+    background: url('../img/trash1.gif');
+    width: 20px;
+    height: 26px;
 }
