@@ -1,4 +1,16 @@
 $(document).ready(function() {
+    var popup_container = $('.popup_container');
+    $('#add_todolist').on('click', function(){
+        popup_container.show();
+    });
+
+    $('#close_popup').on('click', function(){
+        popup_container.hide();
+    });
+
+
+
+    // POPUP EVENTS / FUNCTIONS
     $('#check_all_tasks').on('click', function(e) {
         var checks = $(this).parents('.todo').find('ul.todo_list .custom_checkbox'),
             is_check = $(this).is(':checked');
