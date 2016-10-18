@@ -58,8 +58,9 @@ div#container {
     overflow: hidden;
     background: rgba(0, 0, 0, 0.5);
 }
-i#close_popup {
-    color: rgba(255,255,255, 0.8);
+#close_popup {
+    color: #fff;
+    opacity: 0.5;
     font-size: 50px;
     font-style: normal;
     font-weight: bold;
@@ -70,6 +71,13 @@ i#close_popup {
     width: 100px;
     text-align: center;
     line-height: 100px;
+    cursor: pointer;
+}
+#close_popup:hover,
+.popup_mouse_out #close_popup {
+    opacity: 1;
+}
+.popup_mouse_out {
     cursor: pointer;
 }
 .todo {

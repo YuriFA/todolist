@@ -1,5 +1,6 @@
 $(document).ready(function() {
-    var popup_container = $('.popup_container');
+    var popup_container = $('.popup_container'),
+        popup_out_class = 'popup_mouse_out';
     $('#add_todolist').on('click', function(){
         popup_container.show();
     });
@@ -8,6 +9,21 @@ $(document).ready(function() {
         popup_container.hide();
     });
 
+    $('.todo')
+        .on('mouseenter', function(){
+            popup_container.removeClass(popup_out_class);
+        })
+        .on('mouseleave', function(){
+            popup_container.addClass(popup_out_class);
+        });
+
+    popup_container.on('click', function(){
+        if($(this).hasClass(popup_out_class)) {
+            popup_container.hide();
+        } else {
+            return;
+        }
+    });
 
 
     // POPUP EVENTS / FUNCTIONS
