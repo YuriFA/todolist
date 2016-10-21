@@ -1,0 +1,39 @@
+[
+    {
+        "id": 0,
+        "title": "Main",
+        "tasks": [
+            {
+                "sort": 0,
+                "text": "Lorem ipsum dolor sit amet, consectetur.",
+                "checked": false
+            },
+            {
+                "sort": 1,
+                "text": "Lorem ipsum dolor sit amet, consectetur.1",
+                "checked": false
+            },
+            {
+                "sort": 2,
+                "text": "Lorem ipsum dolor sit amet, consectetur.2",
+                "checked": false
+            }
+        ]
+    },
+    {
+        "id": 1,
+        "title": "Starred",
+        "tasks": [
+            {
+                "sort": 0,
+                "text": "Lorem ipsum dolor sit amet, consectetur.",
+                "checked": false
+            },
+            {
+                "sort": 1,
+                "text": "Lorem ipsum dolor sit amet, consectetur.1",
+                "checked": false
+            }
+        ]
+    }
+]

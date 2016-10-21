@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="todolistApp">
 <head>
   <title>TO DO List</title>
   <link rel="stylesheet" href="css/main.css">
 </head>
-<body>
+<body ng-controller="TodoListCtrl">
   <header id="header"></header>
   <div id="container">
     <div class="controls">
@@ -16,31 +16,19 @@
       </div>
     </div>
     <div class="todo_list_wrap">
-      <div class="todo_list">
+      <div class="todo_list" ng-repeat="list in lists">
         <div class="tl_head">
-          <span>Main</span>
+          <span>{{list.title}}</span>
         </div>
         <div class="tl_tasks">
           <ul>
-            <li class="tl_task">
+            <li class="tl_task" ng-repeat="task in list.tasks">
               <label class="custom_checkbox_label">
                   <input type="checkbox" class="custom_checkbox" name="ch_task[]">
                   <span class="custom_checkbox__check"></span>
-                  <input class="task_title" value="Lorem ipsum dolor sit amet, consectetur.">
-              </label>
-            </li>
-            <li class="tl_task">
-              <label class="custom_checkbox_label">
-                  <input type="checkbox" class="custom_checkbox" name="ch_task[]">
-                  <span class="custom_checkbox__check"></span>
-                  <input class="task_title" value="Lorem ipsum dolor sit amet, consectetur.">
-              </label>
-            </li>
-            <li class="tl_task">
-              <label class="custom_checkbox_label">
-                  <input type="checkbox" class="custom_checkbox" name="ch_task[]">
-                  <span class="custom_checkbox__check"></span>
-                  <input class="task_title" value="Lorem ipsum dolor sit amet, consectetur.">
+                  <div class="task_title">
+                    <textarea class="task_title_area">{{task.text}}</textarea>
+                  </div>
               </label>
             </li>
           </ul>
@@ -49,7 +37,7 @@
           <i>+</i>
         </div>
       </div>
-      <div class="todo_list">
+      <!-- <div class="todo_list">
         <div class="tl_head" style="background-color: #c2be7c;">
           <span>Starred</span>
         </div>
@@ -114,10 +102,13 @@
         <div class="tl_controls add_tl_task">
           <i>+</i>
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
+  <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+  <script type="text/javascript" src="bower_components/angular-resource/angular-resource.min.js"></script>
   <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+  <script type="text/javascript" src="js/app.js"></script>
   <script src="js/script.js"></script>
 </body>
 </html>
