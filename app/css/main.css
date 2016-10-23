@@ -211,10 +211,14 @@ input.custom_checkbox {
     -o-transition: max-height 0.3s ease-in;
     transition: max-height 0.3s ease-in;
 }
+.new_task {
+    padding-bottom: 0;
+    padding-top: 0;
+}
 .new_task_wrap input {
     width: 100%;
     resize: none;
-    height: 30px;
+    line-height: 50px;
     border: none;
     font-size: 15px;
 }

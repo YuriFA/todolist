@@ -1,0 +1,11 @@
+[
+    {
+        "id": 0,
+        "text": "Lorem ipsum dolor sit amet, consectetur.",
+        "checked": false
+    }, {
+        "id": 1,
+        "text": "Lorem ipsum dolor sit amet, consectetur.1",
+        "checked": false
+    }
+]

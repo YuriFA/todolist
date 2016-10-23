@@ -2,40 +2,11 @@
     {
         "id": 0,
         "title": "Main",
-        "color": "",
-        "tasks": [
-            {
-                "sort": 0,
-                "text": "Lorem ipsum dolor sit amet, consectetur.",
-                "checked": true
-            },
-            {
-                "sort": 1,
-                "text": "Lorem ipsum dolor sit amet, consectetur.1",
-                "checked": true
-            },
-            {
-                "sort": 2,
-                "text": "Lorem ipsum dolor sit amet, consectetur.2",
-                "checked": true
-            }
-        ]
+        "color": ""
     },
     {
         "id": 1,
         "title": "Starred",
-        "color": "#c2be7c",
-        "tasks": [
-            {
-                "sort": 0,
-                "text": "Lorem ipsum dolor sit amet, consectetur.",
-                "checked": false
-            },
-            {
-                "sort": 1,
-                "text": "Lorem ipsum dolor sit amet, consectetur.1",
-                "checked": false
-            }
-        ]
+        "color": "#c2be7c"
     }
 ]
