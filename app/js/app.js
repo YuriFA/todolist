@@ -1,7 +1,7 @@
 'use strict';
 
 /* Module */
-var todolistApp = angular.module('todolistApp', ['ngResource']);
+var todolistApp = angular.module('todolistApp', ['ngResource, firebase']);
 todolistApp.constant('MONGOLAB_CONFIG',{API_KEY:'R5yAQrpwxPxNszWhqmMhqbqgbzAyyQUQ', DB_NAME:'todo'});
 
 /* Lists Factory */
@@ -31,15 +31,19 @@ todolistApp.factory('ToDos', [
 ]);
 
 todolistApp.controller('TodoListCtrl',[
-  '$scope','$document', '$location', 'Lists', 'ToDos',
-  function($scope, $http, $location, Lists, ToDos) {
+  '$scope','$firebase', '$location', 'Lists', 'ToDos',
+  function($scope, $firebase, $location, Lists, ToDos) {
 
-    // var postData = {
-    //   "id": 42,
-    //   "title": "The Hitchhiker's Guide to the Galaxy",
-    //   "checked": false
-    // }
-    // ToDos.save({}, postData);
+    // var ref = new Firebase("https://todolist-15ec6.firebaseapp.com/");
+    // // create an AngularFire reference to the data
+    // var sync = $firebase(ref);
+
+    // // download the data into a local object
+    // var syncObject = sync.$asObject();
+
+    // // synchronize the object with a three-way data binding
+    // // click on `index.html` above to see it used in the DOM!
+    // syncObject.$bindTo($scope, "data");
 
     Lists.query(function(data) {
       $scope.lists = data;
