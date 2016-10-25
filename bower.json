@@ -19,6 +19,8 @@
     "angular": "^1.5.8",
     "angular-resource": "^1.5.8",
     "font-awesome": "fontawesome#^4.6.3",
-    "angularjs-mongolab": "^1.0.0-RC1"
+    "angularjs-mongolab": "^1.0.0-RC1",
+    "firebase": "^3.5.2",
+    "angularfire": "^2.0.2"
   }
 }

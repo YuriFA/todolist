@@ -1,57 +1,59 @@
 <!DOCTYPE html>
 <html ng-app="todolistApp">
 <head>
-  <title>TO DO List</title>
-  <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
-  <link rel="stylesheet" href="css/main.css">
+    <title>TO DO List</title>
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/main.css">
 </head>
-<body ng-controller="TodoListCtrl">
-  <header id="header"></header>
-  <div id="container">
-    <div class="controls">
-      <div id="add_todo_list">
-        <div class="plus_ico">
-          <i class="fa fa-plus" aria-hidden="true"></i>
-        </div>
-        <span>New List</span>
-      </div>
-    </div>
-    <div class="todo_list_wrap">
-      <div class="todo_list" ng-repeat="list in lists">
-        <div class="tl_head" ng-style="{backgroundColor: list.color ? list.color : '#84ced0'}">
-          <span>{{list.title}}</span>
-        </div>
-        <div class="tl_tasks">
-          <ul>
-            <li class="tl_task" ng-repeat="task in list.tasks">
-              <label class="custom_checkbox_label">
-                  <input type="checkbox" class="custom_checkbox" ng-model="task.checked" name="ch_task[]">
-                  <span class="custom_checkbox__check"></span>
-                  <div class="task_title">
-                    <span class="task_title_area">{{task.text}}</span>
-                  </div>
-              </label>
-            </li>
-          </ul>
-          <div class="new_task_wrap" ng-class="toggle[$index]">
-            <div class="new_task">
-              <input type="text" ng-model="newTodo[$index].text">
+<body ng-controller="todolistCtrl as todolist">
+    <header id="header"></header>
+    <div id="container">
+        <div class="controls">
+            <div id="add_todo_list">
+                <div class="plus_ico">
+                    <i class="fa fa-plus" aria-hidden="true"></i>
+                </div>
+                <span>New List</span>
             </div>
-            <a class="tl_controls small_btn save_task" ng-click="addTask($index)">Save</a>
-            <a class="tl_controls small_btn save_and_add_task">Save and add new</a>
-          </div>
         </div>
-        <div class="tl_controls add_tl_task" ng-click="openNewTaskForm($index)" ng-init="">
-          <i class="fa" ng-class="{'fa-plus': !toggle[$index], 'fa-minus': toggle[$index] == 'show'}" aria-hidden="true"></i>
+        <div class="todo_list_wrap">
+            <div class="todo_list" ng-repeat="list in todolist.lists">
+                <div class="tl_head" ng-style="{backgroundColor: list.color ? list.color : '#84ced0'}">
+                    <span>{{list.title}}</span>
+                </div>
+                <div class="tl_tasks">
+                    <ul>
+                        <li class="tl_task" ng-repeat="task in list.tasks">
+                            <label class="custom_checkbox_label">
+                                    <input type="checkbox" class="custom_checkbox" ng-model="task.checked" name="ch_task[]">
+                                    <span class="custom_checkbox__check"></span>
+                                    <div class="task_title">
+                                        <span class="task_title_area">{{task.text}}</span>
+                                    </div>
+                            </label>
+                        </li>
+                    </ul>
+                    <div class="new_task_wrap" ng-class="todolist.toggle[$index]">
+                        <div class="new_task">
+                            <input type="text" ng-model="todolist.new_todo[$index]">
+                        </div>
+                        <a class="tl_controls small_btn save_task" ng-click="todolist.addTodo($index)">Save</a>
+                        <a class="tl_controls small_btn save_and_add_task">Save and add new</a>
+                    </div>
+                </div>
+                <div class="tl_controls add_tl_task" ng-click="todolist.openNewTaskForm($index)">
+                    <i class="fa" ng-class="{'fa-plus': !todolist.toggle[$index], 'fa-minus': todolist.toggle[$index] == 'show'}" aria-hidden="true"></i>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
-  <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
-  <script type="text/javascript" src="bower_components/angular-resource/angular-resource.min.js"></script>
-  <script src="bower_components/angularjs-mongolab/src/angular-mongolab.js"></script>
-  <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
-  <script type="text/javascript" src="js/app.js"></script>
-  <script src="js/script.js"></script>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/firebase/firebase.js"></script>
+    <script src="bower_components/angularfire/dist/angularfire.min.js"></script>
+
+    <script src="js/app.js"></script>
+    <script src="js/controllers/todolist.controller.js"></script>
+    <script src="js/services/list.service.js"></script>
+    <script src="js/services/todo.service.js"></script>
 </body>
 </html>
