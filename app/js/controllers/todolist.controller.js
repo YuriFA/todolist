@@ -2,13 +2,9 @@ function todolistCtrl(ListService, TodoService) {
     var vm = this;
 
     vm.lists = ListService.getLists();
-    // vm.lists.$loaded()
-    //     .then(function() {
-    //         angular.forEach(vm.lists, function(list, i) {
-    //             vm.lists[i].todos = TodoService.getTodos()
-    //         });
-    //     });
-
+    vm.todos = TodoService.getTodos();
+    // console.log(vm.todos);
+    // console.log(vm.todos[vm.todos.$indexFor('list_1')]);
 
     vm.addList = function() {
         var new_list = {
@@ -23,11 +19,10 @@ function todolistCtrl(ListService, TodoService) {
 
     vm.addTodo = function(list_id) {
         var new_todo = {
-            list_id: list_id,
             text: vm.new_todo[list_id],
             checked: false
         };
-        TodoService.addTodo(new_todo);
+        TodoService.addTodo(list_id, new_todo);
         vm.new_todo[list_id] = '';
     };
 

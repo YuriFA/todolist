@@ -19,13 +19,13 @@
             </div>
         </div>
         <div class="todo_list_wrap">
-            <div class="todo_list" ng-repeat="list in todolist.lists">
+            <div class="todo_list" ng-repeat="list in todolist.lists" ng-init="list_id=list.$id">
                 <div class="tl_head" ng-style="{backgroundColor: list.color ? list.color : '#84ced0'}">
                     <span>{{list.title}}</span>
                 </div>
                 <div class="tl_tasks">
                     <ul>
-                        <li class="tl_task" ng-repeat="task in list.tasks">
+                        <li class="tl_task" ng-repeat="task in todolist.todos[todolist.todos.$indexFor(list_id)]">
                             <label class="custom_checkbox_label">
                                     <input type="checkbox" class="custom_checkbox" ng-model="task.checked" name="ch_task[]">
                                     <span class="custom_checkbox__check"></span>
@@ -37,10 +37,10 @@
                     </ul>
                     <div class="new_task_wrap" ng-class="todolist.toggle[$index]">
                         <div class="new_task">
-                            <input type="text" ng-model="todolist.new_todo[$index]">
+                            <input type="text" ng-model="todolist.new_todo[list_id]">
                         </div>
-                        <a class="tl_controls small_btn save_task" ng-click="todolist.addTodo($index)">Save</a>
-                        <a class="tl_controls small_btn save_and_add_task">Save and add new</a>
+                        <a class="tl_controls small_btn save_task" ng-click="todolist.addTodo(list_id)">Save</a>
+                        <a class="tl_controls small_btn save_and_add_task">Save and add new {{list_id}}</a>
                     </div>
                 </div>
                 <div class="tl_controls add_tl_task" ng-click="todolist.openNewTaskForm($index)">
