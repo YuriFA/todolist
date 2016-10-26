@@ -1,30 +1,40 @@
-function todolistCtrl(ListService, TodoService) {
+function todolistCtrl(ListService, TodoService, ngDialog) {
     var vm = this;
 
     vm.lists = ListService.getLists();
     vm.todos = TodoService.getTodos();
-    // console.log(vm.todos);
-    // console.log(vm.todos[vm.todos.$indexFor('list_1')]);
 
+    vm.openNewListPopup = function () {
+        ngDialog.open({
+            template: 'templates/popupTmpl.html',
+            className: 'ngdialog-theme-default'
+        });
+    };
     vm.addList = function() {
-        var new_list = {
-            //TODO: add modal popup form with this bottom fields
-            // id: vm.lists.length+1,
-            // title: 'Main',
-            // color: '#c2be7c'
-        };
-        // ListService.addList(new_list);
-
+        if(vm.new_list.title.length > 0) {
+            ListService.addList(vm.new_list);
+            vm.new_list = {};
+        }
     }
 
-    vm.addTodo = function(list_id) {
-        var new_todo = {
-            text: vm.new_todo[list_id],
-            checked: false
-        };
-        TodoService.addTodo(list_id, new_todo);
-        vm.new_todo[list_id] = '';
+    vm.addTodo = function(list_id, toggleIndex=false) {
+        if(vm.new_todo[list_id]) {
+            var new_todo = {
+                text: vm.new_todo[list_id],
+                checked: false
+            };
+            var id = vm.todos.length+1;
+            TodoService.addTodo(list_id, new_todo, id);
+            vm.new_todo[list_id] = '';
+        }
+        if(toggleIndex) {
+            vm.openNewTaskForm(toggleIndex);
+        }
     };
+
+    vm.updateTodo = function(list_id, todo_id, todo) {
+        TodoService.updateTodo(list_id, todo_id, todo);
+    }
 
     vm.toggle = [];
     vm.openNewTaskForm = function(id) {
@@ -33,4 +43,4 @@ function todolistCtrl(ListService, TodoService) {
 }
 
 angular.module('todolistApp')
-.controller('todolistCtrl', ['ListService', 'TodoService', todolistCtrl]);
+.controller('todolistCtrl', ['ListService', 'TodoService', 'ngDialog', todolistCtrl]);

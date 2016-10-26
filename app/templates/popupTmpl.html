@@ -1,0 +1,12 @@
+<div class="new_list_form" ng-controller="todolistCtrl as todolist">
+    <h2>New List</h2>
+    <label class="new_list_label">
+        <span>Title</span>
+        <input type="text" ng-model="todolist.new_list.title">
+    </label>
+    <label class="new_list_label">
+        <span>Color</span>
+        <input type="text" ng-model="todolist.new_list.color">
+    </label>
+    <a class="tl_controls small_btn save_task" ng-click="todolist.addList()">Save</a>
+</div>

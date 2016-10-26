@@ -220,3 +220,17 @@ ul {
   line-height: 50px;
   border: none;
   font-size: 15px; }
+
+.new_list_label {
+  display: block;
+  margin-bottom: 15px; }
+  .new_list_label span {
+    max-width: 30%; }
+  .new_list_label input {
+    float: right;
+    margin-right: 20px;
+    width: 70%;
+    height: 30px;
+    -webkit-border-radius: 3px;
+            border-radius: 3px;
+    padding: 5px 0 5px 10px; }

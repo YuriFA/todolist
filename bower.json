@@ -21,6 +21,7 @@
     "font-awesome": "fontawesome#^4.6.3",
     "angularjs-mongolab": "^1.0.0-RC1",
     "firebase": "^3.5.2",
-    "angularfire": "^2.0.2"
+    "angularfire": "^2.0.2",
+    "ng-dialog": "^0.6.4"
   }
 }

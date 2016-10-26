@@ -6,6 +6,7 @@ var useref = require('gulp-useref');
 var gulpif = require('gulp-if');
 var uglify = require('gulp-uglify');
 var minifyCss = require('gulp-csso');
+var gutil = require('gulp-util');
 
 gulp.task('server', function() {
     gulp.src('app')
@@ -31,7 +32,8 @@ gulp.task('watch', function() {
 gulp.task('build', function() {
     return gulp.src('app/*.html')
         .pipe(useref())
-        .pipe(gulpif('*.js', uglify()))
+        // .pipe(gulpif('*.js', babel({presets: ['es2015'], compact: true})))
+        .pipe(gulpif('*.js', uglify().on('error', gutil.log)))
         .pipe(gulpif('*.css', minifyCss()))
         .pipe(gulp.dest('public'));
 });

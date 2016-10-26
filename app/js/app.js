@@ -8,4 +8,4 @@ var config = {
 };
 firebase.initializeApp(config);
 
-var todolistApp = angular.module('todolistApp', ['firebase']);
+var todolistApp = angular.module('todolistApp', ['firebase', 'ngDialog']);

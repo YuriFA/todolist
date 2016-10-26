@@ -7,7 +7,12 @@ function listService($firebaseArray) {
     }
 
     lists.addList = function(list) {
-        lists.getLists().$add(list);
+        var all_lists = lists.getLists();
+        all_lists.$loaded()
+            .then(function() {
+                var new_id = all_lists.length+1;
+                all_lists.$ref().child('list_'+new_id).set(list);
+            });
     }
 
     return lists;
