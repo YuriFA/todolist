@@ -34,10 +34,10 @@ ul {
   height: 30px;
   margin: 10px 0; }
 
-#add_todo_list {
+#add_list {
   float: right;
   cursor: pointer; }
-  #add_todo_list > .plus_ico {
+  #add_list > .plus-ico {
     display: inline-block;
     width: 1.8em;
     height: 1.8em;
@@ -47,12 +47,12 @@ ul {
             border-radius: 50%;
     border: 2px solid #636f7f;
     text-align: center; }
-    #add_todo_list > .plus_ico > i {
+    #add_list > .plus-ico > i {
       font-size: 1.3em; }
-    #add_todo_list > .plus_ico > .fa-plus:before {
+    #add_list > .plus-ico > .fa-plus:before {
       position: relative;
       top: 3px; }
-  #add_todo_list > span {
+  #add_list > span {
     display: inline-block;
     width: 45px;
     word-wrap: break-word;
@@ -63,16 +63,16 @@ ul {
     margin-left: 5px;
     line-height: 15px; }
 
-.todo_list_wrap {
+.list-group {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex; }
 
-.todo_list {
+.list {
   width: 30%;
   margin-right: 2%; }
-  .todo_list:last-child {
+  .list:last-child {
     margin-right: 0; }
 
 .tl_head {

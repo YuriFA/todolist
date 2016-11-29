@@ -13,15 +13,15 @@
     <header id="header"></header>
     <div id="container">
         <div class="controls">
-            <div id="add_todo_list" ng-click="todolist.openNewListPopup()">
-                <div class="plus_ico">
+            <div id="add_list" ng-click="todolist.openNewListPopup()">
+                <div class="plus-ico">
                     <i class="fa fa-plus" aria-hidden="true"></i>
                 </div>
                 <span>New List</span>
             </div>
         </div>
-        <div class="todo_list_wrap">
-            <div class="todo_list" ng-repeat="list in todolist.lists" ng-init="list_id=list.$id">
+        <div class="list-group">
+            <div class="list" ng-repeat="list in todolist.lists" ng-init="list_id=list.$id">
                 <div class="tl_head" ng-style="{backgroundColor: list.color ? list.color : '#84ced0'}">
                     <span>{{list.title}}</span>
                 </div>
